@@ -7,3 +7,54 @@
 - Enrollment security
 - Decommissioning system
 - Lost access procedures
+## Device Memory 設備的記憶體
+- Cleartext usernames
+- Cleartext passwords
+- Third-party credentials
+- Encryption keys
+## Device Physical Interfaces 設備的實體存取介面
+- Firmware extraction
+- User CLI
+- Admin CLI
+- Privilege escalation
+- Reset to insecure state
+- Removal of storage media
+## Device Web Interface 設備的網頁介面
+- SQL injection
+- Cross-site scripting
+- Cross-site Request Forgery
+- Username enumeration
+- Weak passwords
+- Account lockout
+- Known default credentials
+## Device Firmware 設備的韌體
+- Hardcoded credentials
+- Sensitive information disclosure
+- Sensitive URL disclosure
+- Encryption keys
+- Firmware version display and/or last update date
+## Device Network Services 設備的網路服務
+- Information disclosure
+- User CLI
+- Administrative CLI
+- Injection
+- Denial of Service
+- Unencrypted Services
+- Poorly implemented encryption
+- Test/Development Services
+- Buffer Overflow
+- UPnP
+- Vulnerable UDP Services
+- DoS
+## Administrative Interface 管理介面
+- SQL injection
+- Cross-site scripting
+- Cross-site Request Forgery
+- Username enumeration
+- Weak passwords
+- Account lockout
+- Known default credentials
+- Security/encryption options
+- Logging options
+- Two-factor authentication
+- Inability to wipe device
