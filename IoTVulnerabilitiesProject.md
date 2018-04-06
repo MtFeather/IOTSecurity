@@ -1,6 +1,6 @@
 # IoT Vulnerabilities Project 物聯網漏洞項目
 |  漏洞  | 攻擊面向 | 概要 |
-| :----: | ------- | ---- |
+| :----: | --------------------- | ---- |
 | Username Enumeration<br/>(用戶名列舉) | <li>Administrative Interface</li><li>Device Web Interface</li><li> Cloud Interface</li><li>Mobile Application</li> | <li>能夠通過認證交互收集一組有效的用戶名</li> |
 | Weak Passwords<br/>(弱密碼) | <li>Administrative Interface</li><li>Device Web Interface</li><li>Cloud Interface</li><li>Mobile Application</li> | <li>像是允許將帳戶密碼設置為“1234”或“123456”</li><li>使用預先編程的默認密碼</li> |
 | Account Lockout<br/>(帳號鎖定) | - Administrative Interface<br/>- Device Web Interface<br/>- Cloud Interface<br/>- Mobile Application | -  能夠在 3 至 5 次登錄嘗試失敗後，繼續發送身份驗證嘗試 |
