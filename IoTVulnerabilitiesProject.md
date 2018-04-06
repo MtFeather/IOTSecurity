@@ -10,3 +10,12 @@
 | Update Sent Without Encryption<br/>(非加密更新) | - Update Mechanism | -更新是在沒有使用 TLS 或加密情況下通過網絡傳輸更新文件的 |
 | Update Location Writable<br/>(更新位置為可寫) | - Update Mechanism | - 更新文件的存儲位置是世界可寫的，可能允許修改固件並將其分發給所有用戶 |
 
+<style>
+table:nth-of-type(1) {
+    display:table;
+    width:100%;
+}
+table:nth-of-type(1) th:nth-of-type(2) {
+    width:10%;
+}
+</style>
