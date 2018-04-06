@@ -1,6 +1,6 @@
 # IoT Security TOP 10 物聯網十大安全測試
 物聯網十大安全測試目標是幫助測試人員評估物聯網空間中的物聯網設備和應用程序。下面列出10項基本測試。但這不是全部的事項，但確保涵蓋這些基本原則將大大提高任何物聯網產品的安全性
-## I1. Insecure Web Interface 不安全的WEB介面
+## I1. Insecure Web Interface 不安全的網頁介面
 - Assess any web interface to determine if weak passwords are allowed
 - Assess the account lockout mechanism
 - Assess the web interface for XSS, SQLi and CSRF vulnerabilities and other web application vulnerabilities
@@ -64,7 +64,7 @@
 - Assess the device to ensure it uses encrypted update files and that the files are transmitted using encryption
 - Assess the device to ensure is uses signed files and then validates that file before installation
 
-## I10. Poor Physical Security 實體安全差
+## I10. Poor Physical Security 實體安全考量不足
 - Assess the device to ensure it utilizes a minimal number of physical external ports (e.g. USB ports) on the device
 - Assess the device to determine if it can be accessed via unintended methods such as through an unnecessary USB port
 - Assess the device to determine if it allows for disabling of unused physical ports such as USB
