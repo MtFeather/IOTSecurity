@@ -70,4 +70,4 @@
 - Assess the device to determine if it allows for disabling of unused physical ports such as USB
 - Assess the device to determine if it includes the ability to limit administrative capabilities to a local interface only
 
-> 參考資料: [IoT】又愛又怕絨毛娃娃之簡單談IoT資安及OWASP IoT Top 10](https://laoomiaoo.blogspot.tw/2017/04/iotiotowasp-iot-top-10.html)
+> 參考資料: [\[IoT\]又愛又怕絨毛娃娃之簡單談IoT資安及OWASP IoT Top 10](https://laoomiaoo.blogspot.tw/2017/04/iotiotowasp-iot-top-10.html)
