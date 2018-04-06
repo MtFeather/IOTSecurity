@@ -7,3 +7,4 @@ OWASP Internet of Things （IoT）物聯網項目，旨在幫助製造商、開�
   - [物聯網攻擊面向](/IoTAttackSurfaceAreas.md)
   - [物聯網漏洞](/IoTVulnerabilitiesProject.md)
 ![Iot-project.png](https://www.owasp.org/images/d/d6/Iot-project.png)
+> 參考資料: [OWASP Internet of Things項目](http://www.owasp.org.cn/owasp-project/OWASPInternetofThingsProjectV1.02.pdf)
