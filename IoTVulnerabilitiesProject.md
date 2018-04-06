@@ -11,6 +11,11 @@
 | Update Location Writable<br/>(更新位置為可寫) | <li>Update Mechanism</li> | <li>更新文件的存儲位置是世界可寫的，可能允許修改固件並將其分發給所有用戶</li> |
 | Denial of Service<br/>(拒絕服務) | <li>Device Network Services</li> | <li>可以以拒絕服務或整個設備的方式來攻擊服務</li> |
 | Removal of Storage Media<br/>(刪除儲存介質) | <li>Device Physical Interfaces</li> | <li>能夠從設備中物理移除存儲介質</li> |
+| No Manual Update Mechanism<br/>(沒有手動更新機制) | <li>Update Mechanism</li></li> | <li>無法手動強制更新檢查設備</li> |
+| Missing Update Mechanism<br/>(缺少更新機制) | <li>Update Mechanism</li> | 無法更新設備 |
+| Firmware Version Display and/or Last Update Date<br/>(韌體版本顯示或是最後更新日期) | <li>Device Firmware</li> | <li>當前韌體版本不顯示和/或上次更新日期不顯示</li> |
+| Firmware and storage extraction<br/>(韌體和存儲提取) | <li>JTAG / SWD interface</li><li>[In-Situ dumping](https://www.flashrom.org/Flashrom)</li><li>Intercepting a OTA update</li><li>Downloading from the manufacturers web page</li><li>[eMMC tapping](https://www.exploitee.rs/index.php/Exploitee.rs_Low_Voltage_e-MMC_Adapter)</li><li>Unsoldering the SPI Flash / eMMC chip and reading it in a adapter</li>
+
 
 
 
