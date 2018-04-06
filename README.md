@@ -4,4 +4,4 @@ OWASP Internet of Things （IoT）物聯網項目，旨在幫助製造商、開�
 
 - 本項目包含了攻擊面分析和高危漏洞方面的關鍵信息：
 ![Iot-project.png](https://www.owasp.org/images/d/d6/Iot-project.png)
-[IoT攻擊面向]: /IoTSecurityTestGuides.md/
+[IoT攻擊面向]: https://laoomiaoo.blogspot.tw/2017/04/iotiotowasp-iot-top-10.html
