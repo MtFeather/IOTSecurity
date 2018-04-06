@@ -1,4 +1,4 @@
-# IoT Vulnerabilities Project 物聯網漏洞項目
+# IoT Vulnerabilities Project 物聯網漏洞
 |  漏洞  | 攻擊面向 | 概要 |
 | :----: | ------- | ---- |
 | Username Enumeration<br/>(用戶名列舉) | <li>Administrative Interface</li><li>Device Web Interface</li><li> Cloud Interface</li><li>Mobile Application</li> | <li>能夠通過認證交互收集一組有效的用戶名</li> |
