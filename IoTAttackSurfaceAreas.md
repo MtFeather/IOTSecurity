@@ -58,3 +58,57 @@
 - Logging options
 - Two-factor authentication
 - Inability to wipe device
+## Local Data Storage 本地資料儲存
+- Unencrypted data
+- Data encrypted with discovered keys
+- Lack of data integrity checks
+## Cloud Web Interface 雲端網頁介面
+- SQL injection
+- Cross-site scripting
+- Cross-site Request Forgery
+- Username enumeration
+- Weak passwords
+- Account lockout
+- Known default credentials
+- Transport encryption
+- Insecure password recovery mechanism
+- Two-factor authentication
+## Third-party Backend APIs 第三方的後端API
+- Unencrypted PII sent
+- Encrypted PII sent
+- Device information leaked
+- Location leaked
+## Update Mechanism 更新機制
+- Update sent without encryption
+- Updates not signed
+- Update location writable
+- Update verification
+- Malicious update
+- Missing update mechanism
+- No manual update mechanism
+## Mobile Application 行動裝置的應用程式
+- Implicitly trusted by device or cloud
+- Username enumeration
+- Account lockout
+- Known default credentials
+- Weak passwords
+- Insecure data storage
+- Transport encryption
+- Insecure password recovery mechanism
+- Two-factor authentication
+## Vendor Backend APIs 供應商後端API
+- Inherent trust of cloud or mobile application
+- Weak authentication
+- Weak access controls
+- Injection attacks
+## Ecosystem Communication 生物系統的通訊
+- Health checks
+- Heartbeats
+- Ecosystem commands
+- Deprovisioning
+- Pushing updates
+## Network Traffic 網路流量
+- LAN
+- LAN to Internet
+- Short range
+- Non-standard
