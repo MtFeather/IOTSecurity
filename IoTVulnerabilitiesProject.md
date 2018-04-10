@@ -15,7 +15,7 @@
 | Missing Update Mechanism<br/>(缺少更新機制) | <li>Update Mechanism</li> | 無法更新設備 |
 | Firmware Version Display and/or Last Update Date<br/>(韌體版本顯示或是最後更新日期) | <li>Device Firmware</li> | <li>當前韌體版本不顯示和/或上次更新日期不顯示</li> |
 | Firmware and storage extraction<br/>(韌體和存儲提取) | <li>JTAG / SWD interface</li><li>[In-Situ dumping](https://www.flashrom.org/Flashrom)</li><li>Intercepting a OTA update</li><li>Downloading from the manufacturers web page</li><li>[eMMC tapping](https://www.exploitee.rs/index.php/Exploitee.rs_Low_Voltage_e-MMC_Adapter)</li><li>Unsoldering the SPI Flash / eMMC chip and reading it in a adapter</li> |
-| Manipulating the code execution flow of the device<br/>(操作設備的代碼執行流程) | <li>JTAG / SWD interface</li><li>[Side channel attacks like glitching](https://wiki.newae.com/Main_Page)</li> |
+| Manipulating the code execution flow of the device<br/>(操作設備的代碼執行流程) | <li>JTAG / SWD interface</li><li>[Side channel attacks like glitching](https://wiki.newae.com/Main_Page)</li> | <li>借助於 JTAG 適配器和 gdb，我們可以修改設備中固件的執行程序，並繞過幾乎所有基於軟件的安全控制</li><li>側面通道攻擊還可以修改執行流程，或者可以用來獲取設備洩漏的有趣信息</li>
 | Obtaining console access<br/>(獲取控制台訪問權限) | <li>Serial interfaces (SPI / UART)</li> | <li>通過連接到串行接口，我們將獲得對設備的完全控制台訪問</li><li>通常來說，安全措施包括防止攻擊者進入單獨用戶模式的自定義啟動程序，但它也可繞過攻擊者</li>
 | Insecure 3rd party components<br/>(不安全的第三方組件) | <li>Software</li> | <li>使用過期版本的 busybox,openssl,ssh,web服務器等</li> |
 
