@@ -148,7 +148,8 @@ sudo cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_41_sql_injection_a
 sudo service apache2 reload	#重新啟動apache
 ```
 ### 4. SQL Injection 防護測試
-
+![sql_injection_test_1.PNG](images/sql_injection_test_1.PNG)
+![sql_injection_test_2.PNG](images/sql_injection_test_2.PNG)
 ***
 - 基本的規則都放在/usr/share/modsecurity-crs/base_rules
 
