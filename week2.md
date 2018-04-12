@@ -5,7 +5,7 @@
 ![command_injection_1.PNG](images/command_injection_1.PNG)
 
 - 有漏洞的命令注入測試
-![command_injection_1.PNG](images/command_injection_1.PNG)
+![command_injection_attack.PNG](images/command_injection_attack.PNG)
 ***
 ####  cat /var/log/apache2/access.log 
 ```
