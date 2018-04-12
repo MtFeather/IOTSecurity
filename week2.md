@@ -121,8 +121,8 @@ sudo apachectl -M | grep --color security2	# 檢查是否安裝並啟動完成
 sudo mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf		# 更改設定檔的副檔名
 sudo service apache2 reload	# 重新啟動apache
 
-sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf
-sudo sed -i "s/SecResponseBodyAccess On/SecResponseBodyAccess Off/" /etc/modsecurity/modsecurity.conf
+sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf		#開啟ModSecurity防火牆。它會檢測並阻止該服務器上的任何惡意攻擊
+sudo sed -i "s/SecResponseBodyAccess On/SecResponseBodyAccess Off/" /etc/modsecurity/modsecurity.conf	#它會告訴ModSecurity是否會檢查請求。
 ```
 ### 2. 新增造訪路徑攻擊字串的規則 
 ```Bash
@@ -141,4 +141,33 @@ sudo vim /etc/apache2/mods-enabled/security2.conf
         IncludeOptional "/usr/share/modsecurity-crs/*.conf"
         IncludeOptional "/usr/share/modsecurity-crs/activated_rules/*.conf"	#mod_security 的規則設定檔都放在這個目錄
 </IfModule>
+```
+### 3. 複製規則到目錄
+```Bash
+sudo cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_41_sql_injection_attacks.conf /usr/share/modsecurity-crs/activated_rules/
+sudo service apache2 reload	#重新啟動apache
+```
+- 預設的規則都放在/usr/share/modsecurity-crs/base_rules
+```
+modsecurity_35_bad_robots.data	
+modsecurity_35_scanners.data
+modsecurity_40_generic_attacks.data
+modsecurity_50_outbound.data
+modsecurity_50_outbound_malware.data
+modsecurity_crs_20_protocol_violations.conf
+modsecurity_crs_21_protocol_anomalies.conf
+modsecurity_crs_23_request_limits.conf
+modsecurity_crs_30_http_policy.conf
+modsecurity_crs_35_bad_robots.conf
+modsecurity_crs_40_generic_attacks.conf #網站一般攻擊規則
+modsecurity_crs_41_sql_injection_attacks.conf #資料庫隱碼攻擊防護
+modsecurity_crs_41_xss_attacks.conf
+modsecurity_crs_42_tight_security.conf
+modsecurity_crs_45_trojans.conf	#木馬攻擊防範規則
+modsecurity_crs_47_common_exceptions.conf
+modsecurity_crs_48_local_exceptions.conf.example
+modsecurity_crs_49_inbound_blocking.conf
+modsecurity_crs_50_outbound.conf
+modsecurity_crs_59_outbound_blocking.conf
+modsecurity_crs_60_correlation.conf
 ```
