@@ -26,8 +26,16 @@
 ```
 ***
 ### 2. 測試DVWA/SQL Injection
-#### 正常的SQL語法測試
+#### 正常的SQL語法測試:
 ```sql
 SELECT first_name, last_name FROM users WHERE user_id = '1';
 ```
 ![sql_injection_1.PNG](images/sql_injection_1.PNG)
+
+#### SQL Injection 漏洞測試 
+```sql
+SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
+![sql_injection_attack.PNG](images/sql_injection_attack.PNG)
+
+```
+```
