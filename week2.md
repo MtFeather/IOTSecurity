@@ -122,3 +122,22 @@ sudo service apache2 reload	# 重新啟動apache
 sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf
 sudo sed -i "s/SecResponseBodyAccess On/SecResponseBodyAccess Off/" /etc/modsecurity/modsecurity.conf
 ```
+
+## 新增造訪路徑攻擊字串的規則 
+```Bash
+sudo vim /etc/apache2/mods-enabled/security2.conf
+```
+```
+<IfModule security2_module>
+        # Default Debian dir for modsecurity's persistent data
+        SecDataDir /var/cache/modsecurity
+
+        # Include all the *.conf files in /etc/modsecurity.
+        # Keeping your local configuration in that directory
+        # will allow for an easy upgrade of THIS file and
+        # make your life easier
+        IncludeOptional /etc/modsecurity/*.conf
+        IncludeOptional "/usr/share/modsecurity-crs/*.conf"
+        IncludeOptional "/usr/share/modsecurity-crs/activated_rules/*.conf"	#mod_security 的規則設定檔都放在這個目錄
+</IfModule>
+```
