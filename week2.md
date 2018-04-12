@@ -35,7 +35,5 @@ SELECT first_name, last_name FROM users WHERE user_id = '1';
 #### SQL Injection 漏洞測試 
 ```sql
 SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
+```
 ![sql_injection_attack.PNG](images/sql_injection_attack.PNG)
-
-```
-```
