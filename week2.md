@@ -147,27 +147,29 @@ sudo vim /etc/apache2/mods-enabled/security2.conf
 sudo cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_41_sql_injection_attacks.conf /usr/share/modsecurity-crs/activated_rules/
 sudo service apache2 reload	#重新啟動apache
 ```
-- 預設的規則都放在/usr/share/modsecurity-crs/base_rules
+- 基本的規則都放在/usr/share/modsecurity-crs/base_rules
 ```
-modsecurity_35_bad_robots.data	
-modsecurity_35_scanners.data
-modsecurity_40_generic_attacks.data
-modsecurity_50_outbound.data
-modsecurity_50_outbound_malware.data
-modsecurity_crs_20_protocol_violations.conf
-modsecurity_crs_21_protocol_anomalies.conf
-modsecurity_crs_23_request_limits.conf
-modsecurity_crs_30_http_policy.conf
-modsecurity_crs_35_bad_robots.conf
-modsecurity_crs_40_generic_attacks.conf #網站一般攻擊規則
-modsecurity_crs_41_sql_injection_attacks.conf #資料庫隱碼攻擊防護
-modsecurity_crs_41_xss_attacks.conf
-modsecurity_crs_42_tight_security.conf
-modsecurity_crs_45_trojans.conf	#木馬攻擊防範規則
-modsecurity_crs_47_common_exceptions.conf
-modsecurity_crs_48_local_exceptions.conf.example
-modsecurity_crs_49_inbound_blocking.conf
-modsecurity_crs_50_outbound.conf
-modsecurity_crs_59_outbound_blocking.conf
-modsecurity_crs_60_correlation.conf
+|                    防護規則                       |                                     概要                                        |
+| ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| modsecurity_35_bad_robots.data                   | 惡意爬蟲規則                                                                     |
+| modsecurity_35_scanners.data                     | 惡意掃描器規則                                                                   |
+| modsecurity_40_generic_attacks.data              | 常見的攻擊例如命令執行(代碼執行、注入、文件包含、敏感信息洩露、HTTP響應拆分等相關規則) |
+| modsecurity_50_outbound.data                     | 檢測response_body中的錯誤信息，警告信息，列目錄信息                                 |
+| modsecurity_50_outbound_malware.data             | 檢測response_body中的錯誤信息，警告信息，列目錄信息                                 |
+| modsecurity_crs_20_protocol_violations.conf      | HTTP協議規範相關規則                                                              |
+| modsecurity_crs_21_protocol_anomalies.conf       | HTTP協議規範相關規則                                                              |
+| modsecurity_crs_23_request_limits.conf           | HTTP協議大小長度限制相關規則                                                      |
+| modsecurity_crs_30_http_policy.conf              | HTTP協議白名單相關規則                                                            |
+| modsecurity_crs_35_bad_robots.conf               | 惡意掃描器與爬蟲規則                                                              |
+| modsecurity_crs_40_generic_attacks.conf          | 常見的攻擊例如命令執行(代碼執行、注入、文件包含、敏感信息洩露、HTTP響應拆分等相關規則) |
+| modsecurity_crs_41_sql_injection_attacks.conf    | SQL注入相關規則                                                                  | 
+| modsecurity_crs_41_xss_attacks.conf              | XSS相關規則                                                                      |
+| modsecurity_crs_42_tight_security.conf           | 目錄遍歷相關規則                                                                  |
+| modsecurity_crs_45_trojans.conf                  | webshell相關規則                                                                 |
+| modsecurity_crs_47_common_exceptions.conf        | Apache異常相關規則                                                               |
+| modsecurity_crs_48_local_exceptions.conf.example |                                                                                 |
+| modsecurity_crs_49_inbound_blocking.conf         | 協同防禦相關規則                                                                  |
+| modsecurity_crs_50_outbound.conf                 | 檢測response_body中的錯誤信息，警告信息，列目錄信息                                 |
+| modsecurity_crs_59_outbound_blocking.conf        | 協同防禦相關規則                                                                  |
+| modsecurity_crs_60_correlation.conf              | 協同防禦相關規則                                                                  |
 ```
