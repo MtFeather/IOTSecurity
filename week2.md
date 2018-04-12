@@ -88,11 +88,8 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 ```
 - 上傳具有攻擊的檔案
 ![file_upload_1.PNG](images/file_upload_1.PNG)
-
 - 成功上傳
 ![file_upload_2.PNG](images/file_upload_2.PNG)
-
 - 執行上傳後的檔案	
 ![file_upload_3.PNG](images/file_upload_3.PNG)
-
 ***
