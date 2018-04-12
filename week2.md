@@ -148,7 +148,6 @@ sudo cp /usr/share/modsecurity-crs/base_rules/modsecurity_crs_41_sql_injection_a
 sudo service apache2 reload	#重新啟動apache
 ```
 - 基本的規則都放在/usr/share/modsecurity-crs/base_rules
-```
 |                    防護規則                       |                                     概要                                        |
 | ------------------------------------------------ | ------------------------------------------------------------------------------- |
 | modsecurity_35_bad_robots.data                   | 惡意爬蟲規則                                                                     |
@@ -172,4 +171,4 @@ sudo service apache2 reload	#重新啟動apache
 | modsecurity_crs_50_outbound.conf                 | 檢測response_body中的錯誤信息，警告信息，列目錄信息                                 |
 | modsecurity_crs_59_outbound_blocking.conf        | 協同防禦相關規則                                                                  |
 | modsecurity_crs_60_correlation.conf              | 協同防禦相關規則                                                                  |
-```
+
