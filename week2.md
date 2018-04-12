@@ -2,13 +2,8 @@
 ## Web Attacks漏洞測試
 ### 1.  測試DVWA/command injection
 ![command_injection_1.PNG](images/command_injection_1.PNG)
-```Bash
-cat /var/log/apache2/access.log 
-```
-```Bash
-echo "hello GitHub" #Bash
-cat "hello"
-```
+####cat /var/log/apache2/access.log 
+
 ```
 192.168.10.59 - - [12/Feb/2016:03:22:59 +0800] "GET /DVWA/dvwa/css/main.css HTTP/1.1" 200 1447 "http://120.114.140.30/DVWA/vulnerabilities/exec/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 192.168.10.59 - - [12/Feb/2016:03:22:59 +0800] "GET /DVWA/dvwa/images/logo.png HTTP/1.1" 200 5332 "http://120.114.140.30/DVWA/vulnerabilities/exec/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
