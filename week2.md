@@ -1,4 +1,4 @@
 # 期末專案:物聯網設備的攻擊實測
 ## Web Attacks漏洞測試
 1.  測試DVWA/command injection
-![command_injection_1.PNG](/images/command_injection_1.PNG)
+![command_injection_1.PNG](images/command_injection_1.PNG)
