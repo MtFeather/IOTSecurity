@@ -107,8 +107,10 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 192.168.10.59 - - [12/Feb/2016:05:12:41 +0800] "GET /DVWA/hackable/uploads/hack.php HTTP/1.1" 200 211 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 189.46.194.243 - - [12/Feb/2016:05:16:57 +0800] "GET / HTTP/1.1" 200 11578 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
 ```
-
+***
 ## 安裝modsecurity
+mod_security 是 Apache 的保安模組，可以預防多種針對網頁的攻擊，例如執行遠端程式碼, SQL Injection，路徑掃瞄等。
+### 1. 安裝並設定
 ```zsh
 sudo apt-get update	# 更新資料庫
 sudo apt-get install libapache2-modsecurity -y  # 安裝modesecurity
@@ -122,8 +124,7 @@ sudo service apache2 reload	# 重新啟動apache
 sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf
 sudo sed -i "s/SecResponseBodyAccess On/SecResponseBodyAccess Off/" /etc/modsecurity/modsecurity.conf
 ```
-
-## 新增造訪路徑攻擊字串的規則 
+### 2. 新增造訪路徑攻擊字串的規則 
 ```Bash
 sudo vim /etc/apache2/mods-enabled/security2.conf
 ```
