@@ -109,7 +109,7 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 ```
 
 ## 安裝modsecurity
-```Bash
+```zsh
 sudo apt-get update	# 更新資料庫
 sudo apt-get install libapache2-modsecurity -y  # 安裝modesecurity
 
