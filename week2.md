@@ -1,6 +1,10 @@
 # 期末專案:物聯網設備的攻擊實測
 ## Web Attacks漏洞測試
 ### 1.  測試DVWA/Command Injection
+- 正常的命令注入測試
+![command_injection_1.PNG](images/command_injection_1.PNG)
+
+- 有漏洞的命令注入測試
 ![command_injection_1.PNG](images/command_injection_1.PNG)
 ***
 ####  cat /var/log/apache2/access.log 
@@ -27,13 +31,13 @@
 ***
 
 ### 2. 測試DVWA/SQL Injection
-#### 正常的SQL語法測試:
+- 正常的SQL語法測試:
 ```sql
 SELECT first_name, last_name FROM users WHERE user_id = '1';
 ```
 ![sql_injection_1.PNG](images/sql_injection_1.PNG)
 
-#### SQL Injection 漏洞測試 
+- SQL Injection 漏洞測試 
 ```sql
 SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 ```
@@ -54,9 +58,10 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 ***
 
 ### 3. 測試DVWA/File Inclusion
-#### 正常的網頁GET本地文件
+- 正常的網頁GET本地文件
 ![file_inclusion_1.PNG](images/file_inclusion_1.PNG)
-#### 有漏洞本地文件測試
+
+- 有漏洞本地文件測試
 ![file_inclusion_1.PNG](images/file_inclusion_attack.PNG)
 #### cat /var/log/apache2/access.log
 ```
