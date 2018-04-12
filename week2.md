@@ -107,3 +107,18 @@ SELECT first_name, last_name FROM users WHERE user_id = '1' OR '1'='1';
 192.168.10.59 - - [12/Feb/2016:05:12:41 +0800] "GET /DVWA/hackable/uploads/hack.php HTTP/1.1" 200 211 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 189.46.194.243 - - [12/Feb/2016:05:16:57 +0800] "GET / HTTP/1.1" 200 11578 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
 ```
+
+## 安裝modsecurity
+```Bash
+sudo apt-get update	# 更新資料庫
+sudo apt-get install libapache2-modsecurity -y  # 安裝modesecurity
+
+sudo  service apache2 reload	# 重新啟動apache
+sudo apachectl -M | grep --color security2	# 檢查是否安裝並啟動完成
+
+sudo mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf		# 更改設定檔的副檔名
+sudo service apache2 reload	# 重新啟動apache
+
+sudo sed -i "s/SecRuleEngine DetectionOnly/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf
+sudo sed -i "s/SecResponseBodyAccess On/SecResponseBodyAccess Off/" /etc/modsecurity/modsecurity.conf
+```
