@@ -7,6 +7,7 @@ cat /var/log/apache2/access.log
 ```
 ```Bash
 echo "hello GitHub" #Bash
+cat "hello"
 ```
 ```
 192.168.10.59 - - [12/Feb/2016:03:22:59 +0800] "GET /DVWA/dvwa/css/main.css HTTP/1.1" 200 1447 "http://120.114.140.30/DVWA/vulnerabilities/exec/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
