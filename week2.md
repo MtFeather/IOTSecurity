@@ -253,6 +253,7 @@ Engine-Mode: "ENABLED"
 ## Web RE-Attacks漏洞測試
 WAF 是一種 Web 應用程式防火牆，可協助保護您的 Web 應用程式不受可能影響應用程式可用性、安全性危害、或耗用過多資源的常見 Web 入侵程式的侵擾。
 ### 使用nmap偵測WAF
+#### `http-waf-detect` 試圖通過使用惡意負載探測Web服務器並檢測響應代碼和主體中的變化來確定Web服務器是受IPS（入侵防禦系統），IDS（入侵檢測系統）或WAF（Web應用防火牆）保護的。
 - 底下是沒有WAF防護的顯示結果
 ```Bash
 $  nmap -p 80,433 --script=http-waf-detect 192.168.10.66
