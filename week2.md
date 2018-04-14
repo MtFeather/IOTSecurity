@@ -305,5 +305,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.27 seconds
 ```
 ***
 ### 使用SQLmap偵測WAF
-
+sqlmap是一款開源滲透測試工具，可以自動檢測和利用SQL注入漏洞並接管數據庫服務器。
+`sqlmap`預設系統也不會安裝，所以必續自己安裝：
+```Bash
+$ sudo apt-get install sqlmap
+```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
