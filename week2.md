@@ -250,4 +250,4 @@ Engine-Mode: "ENABLED"
 | modsecurity_crs_60_correlation.conf              | 協同防禦相關規則                                                                  |
 ***
 
-
+> 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
