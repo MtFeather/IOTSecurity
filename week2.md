@@ -326,6 +326,7 @@ $ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&pas
 [09:57:01] [INFO] testing connection to the target URL
 sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you want to follow? [Y/n]
 [09:57:12] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
+# 底下這行可以看到偵測到WAF
 [09:57:12] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
 [09:57:12] [WARNING] dropping timeout to 10 seconds (i.e. '--timeout=10')
 [09:57:12] [INFO] using WAF scripts to detect backend WAF/IPS/IDS protection
