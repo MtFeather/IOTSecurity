@@ -310,4 +310,102 @@ sqlmap是一款開源滲透測試工具，可以自動檢測和利用SQL注入�
 ```Bash
 $ sudo apt-get install sqlmap
 ```
+#### `-u`是要檢測的網址，`--identify-waf`是對WAF / IPS / IDS保護進行全面測試
+```
+$ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&password=password&Login=Login#" --identify-waf
+        _
+ ___ ___| |_____ ___ ___  {1.0.4.0#dev}
+|_ -| . | |     | .'| . |
+|___|_  |_|_|_|_|__,|  _|
+      |_|           |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting at 09:57:00
+
+[09:57:01] [INFO] testing connection to the target URL
+sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you want to follow? [Y/n]
+[09:57:12] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
+[09:57:12] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
+[09:57:12] [WARNING] dropping timeout to 10 seconds (i.e. '--timeout=10')
+[09:57:12] [INFO] using WAF scripts to detect backend WAF/IPS/IDS protection
+[09:57:12] [WARNING] no WAF/IDS/IPS product has been identified (this doesn't mean that there is none)
+[09:57:12] [INFO] testing if the target URL is stable
+[09:57:13] [WARNING] GET parameter 'username' does not appear dynamic
+[09:57:13] [WARNING] heuristic (basic) test shows that GET parameter 'username' might not be injectable
+[09:57:13] [INFO] testing for SQL injection on GET parameter 'username'
+[09:57:13] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[09:57:13] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Parameter replace'
+[09:57:13] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[09:57:14] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[09:57:14] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause'
+[09:57:14] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[09:57:14] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace'
+[09:57:14] [INFO] testing 'MySQL inline queries'
+[09:57:14] [INFO] testing 'PostgreSQL inline queries'
+[09:57:14] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[09:57:14] [INFO] testing 'MySQL > 5.0.11 stacked queries (SELECT - comment)'
+[09:57:14] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[09:57:14] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[09:57:14] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[09:57:14] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SELECT)'
+[09:57:15] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[09:57:15] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind'
+[09:57:15] [INFO] testing 'Oracle AND time-based blind'
+[09:57:15] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[09:57:15] [WARNING] using unescaped version of the test because of zero knowledge of the back-end DBMS. You can try to explicitly set it using option '--dbms'
+[09:57:16] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[09:57:18] [WARNING] GET parameter 'username' is not injectable
+[09:57:18] [WARNING] GET parameter 'password' does not appear dynamic
+[09:57:18] [WARNING] heuristic (basic) test shows that GET parameter 'password' might not be injectable
+[09:57:18] [INFO] testing for SQL injection on GET parameter 'password'
+[09:57:18] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[09:57:19] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Parameter replace'
+[09:57:19] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[09:57:19] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[09:57:19] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause'
+[09:57:19] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[09:57:19] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace'
+[09:57:19] [INFO] testing 'MySQL inline queries'
+[09:57:19] [INFO] testing 'PostgreSQL inline queries'
+[09:57:19] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[09:57:19] [INFO] testing 'MySQL > 5.0.11 stacked queries (SELECT - comment)'
+[09:57:19] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[09:57:19] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[09:57:20] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[09:57:20] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SELECT)'
+[09:57:20] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[09:57:20] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind'
+[09:57:20] [INFO] testing 'Oracle AND time-based blind'
+[09:57:20] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[09:57:22] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[09:57:23] [WARNING] GET parameter 'password' is not injectable
+[09:57:23] [WARNING] GET parameter 'Login' does not appear dynamic
+[09:57:23] [WARNING] heuristic (basic) test shows that GET parameter 'Login' might not be injectable
+[09:57:23] [INFO] testing for SQL injection on GET parameter 'Login'
+[09:57:24] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[09:57:24] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Parameter replace'
+[09:57:24] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[09:57:24] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[09:57:24] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause'
+[09:57:24] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[09:57:24] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace'
+[09:57:24] [INFO] testing 'MySQL inline queries'
+[09:57:24] [INFO] testing 'PostgreSQL inline queries'
+[09:57:24] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[09:57:24] [INFO] testing 'MySQL > 5.0.11 stacked queries (SELECT - comment)'
+[09:57:25] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[09:57:25] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[09:57:25] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[09:57:25] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SELECT)'
+[09:57:25] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[09:57:25] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind'
+[09:57:25] [INFO] testing 'Oracle AND time-based blind'
+[09:57:25] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[09:57:27] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[09:57:28] [WARNING] GET parameter 'Login' is not injectable
+[09:57:28] [CRITICAL] all tested parameters appear to be not injectable. Try to increase '--level'/'--risk' values to perform more tests. Also, you can try to rerun by providing either a valid value for option '--string' (or '--regexp') If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could retry with an option '--tamper' (e.g. '--tamper=space2comment')
+[09:57:28] [WARNING] HTTP error codes detected during run:
+400 (Bad Request) - 1 times, 403 (Forbidden) - 664 times, 404 (Not Found) - 1 times
+```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
