@@ -283,4 +283,20 @@ MAC Address: B8:27:EB:E8:A4:E5 (Raspberry Pi Foundation)
 Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
 ```
 #### `http-waf-fingerprint` 嘗試檢測Web應用程序防火牆及其類型和版本的存在。
+```Bash
+$ nmap --script=http-waf-fingerprint --script-args http-waf-fingerprint.intensive=1 192.168.10.66
+Starting Nmap 6.40 ( http://nmap.org ) at 2018-04-14 22:25 CST
+Nmap scan report for 192.168.10.66.ksu.edu.tw (192.168.10.66)
+Host is up (0.0018s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+| http-waf-fingerprint:
+|   Detected WAF
+|_    Naxsi
+MAC Address: B8:27:EB:E8:A4:E5 (Raspberry Pi Foundation)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.27 seconds
+```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
