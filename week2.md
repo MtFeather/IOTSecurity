@@ -311,7 +311,7 @@ sqlmap是一款開源滲透測試工具，可以自動檢測和利用SQL注入�
 $ sudo apt-get install sqlmap
 ```
 #### `-u`是要檢測的網址，`--identify-waf`是對WAF / IPS / IDS保護進行全面測試
-```
+```Bash
 $ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&password=password&Login=Login#" --identify-waf
         _
  ___ ___| |_____ ___ ___  {1.0.4.0#dev}
@@ -326,7 +326,7 @@ $ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&pas
 [09:57:01] [INFO] testing connection to the target URL
 sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you want to follow? [Y/n]
 [09:57:12] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
-<font color="red">[09:57:12] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS</font>
+[09:57:12] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
 [09:57:12] [WARNING] dropping timeout to 10 seconds (i.e. '--timeout=10')
 [09:57:12] [INFO] using WAF scripts to detect backend WAF/IPS/IDS protection
 [09:57:12] [WARNING] no WAF/IDS/IPS product has been identified (this doesn't mean that there is none)
