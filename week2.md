@@ -250,4 +250,35 @@ Engine-Mode: "ENABLED"
 | modsecurity_crs_60_correlation.conf              | 協同防禦相關規則                                                                  |
 ***
 
+## Web RE-Attacks漏洞測試
+WAF 是一種 Web 應用程式防火牆，可協助保護您的 Web 應用程式不受可能影響應用程式可用性、安全性危害、或耗用過多資源的常見 Web 入侵程式的侵擾。
+### 使用nmap偵測WAF
+- 底下是沒有WAF防護的顯示結果
+```Bash
+$  nmap -p 80,433 --script=http-waf-detect 192.168.10.66
+Starting Nmap 6.40 ( http://nmap.org ) at 2018-04-14 21:20 CST
+Nmap scan report for 192.168.10.66.ksu.edu.tw (192.168.10.66)
+Host is up (0.00030s latency).
+PORT    STATE  SERVICE
+80/tcp  open   http
+433/tcp closed unknown
+MAC Address: B8:27:EB:E8:A4:E5 (Raspberry Pi Foundation)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+```
+- 底下是有WAF防護的顯示結果
+```Bash
+$  nmap -p 80,433 --script=http-waf-detect 192.168.10.66
+Starting Nmap 6.40 ( http://nmap.org ) at 2018-04-14 21:20 CST
+Nmap scan report for 192.168.10.66.ksu.edu.tw (192.168.10.66)
+Host is up (0.00030s latency).
+PORT    STATE  SERVICE
+80/tcp  open   http
+| http-waf-detect: IDS/IPS/WAF detected:
+|_192.168.10.66.ksu.edu.tw:80/?p4yl04d3=<script>alert(document.cookie)</script>
+433/tcp closed unknown
+MAC Address: B8:27:EB:E8:A4:E5 (Raspberry Pi Foundation)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
