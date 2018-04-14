@@ -282,4 +282,5 @@ MAC Address: B8:27:EB:E8:A4:E5 (Raspberry Pi Foundation)
 
 Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
 ```
+#### `http-waf-fingerprint` 嘗試檢測Web應用程序防火牆及其類型和版本的存在。
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
