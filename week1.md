@@ -95,3 +95,9 @@ $_DVWA[ 'default_phpids_verbose' ] = 'false';
 
 ?>
 ```
+```Bash
+$ sudo chmod +777  /var/www/html/DVWA/hackable/uploads/
+$ sudo chmod  +777 /var/www/html/DVWA/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt
+$ sed -i s/allow_url_fopen = Off/allow_url_fopen = On/g /etc/php/7.0/apache2/php.ini
+$ sed -i s/allow_url_include = Off/allow_url_include = On/g /etc/php/7.0/apache2/php.ini
+```
