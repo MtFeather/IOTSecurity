@@ -224,6 +224,42 @@ $password = "bug";
 ### 3. 初始化bWAPP
 - 網頁連結：[http://192.168.10.66/bWAPP/install.php](http://192.168.10.66/bWAPP/install.php)
 ![bWAPP_installation](images/bWAPP_installation.PNG)
+***
 ### 4. 開始使用bWAPP
 - 網頁連結：[http://192.168.10.66/bWAPP/login.php](http://192.168.10.66/bWAPP/login.php)
 ![bWAPP_login](images/bWAPP_login.PNG)
+***
+## 建置NodeGoat測試平台在Raspberry PI 3 websecurity@IOT devices
+### 1. 更新時間
+- `date`手動更新
+```Bash
+$ date -s "2018/04/19 1:50"
+```
+- 使用`ntp`自動更新時間
+```Bash
+$ ntpdate ntp.ksu.edu.tw
+```
+***
+### 2. 安裝`nodejs`、`npm`
+- 全系統更新
+```Bash
+$ apt-get update
+```
+- 安裝`nodejs`、`npm`
+```Bash
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm
+$ sudo apt install nodejs-legacy
+```
+***
+### 3. 下載NodeGoat網頁並安裝所需服務
+```Bash
+$ git clone https://github.com/OWASP/NodeGoat.git
+$ cd NodeGoat
+$ npm install
+````
+***
+### 4. 啟動服務
+```Bash
+$ npm start
+```
