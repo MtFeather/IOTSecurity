@@ -109,6 +109,10 @@ $ sudo service apache2 restart
 ***
 ## 建置Mutillidae測試平台在Raspberry PI 3 websecurity@IOT devices
 ### 1. 下載網頁
+- 移動到/var/www/html
+```Bash
+$ cd /var/www/html
+```
 - 下載網址：[https://sourceforge.net/projects/mutillidae/](https://sourceforge.net/projects/mutillidae/)
 ```Bash
 $ sudo wget https://jaist.dl.sourceforge.net/project/mutillidae/mutillidae-project/LATEST-mutillidae-2.6.60.zip --no-check-certificate
@@ -119,13 +123,9 @@ $ unzip LATEST-mutillidae-2.6.60.zip
 ```
 ***
 ### 2. 修改設定檔
-- 移動到mutillidae目錄
-```Bash
-$ cd /var/www/html/mutillidae/
-```
 - 修改資料庫使用者/密碼
 ```Bash
-$ vim includes/database-config.php
+$ vim mutillidae/includes/database-config.php
 ```
 ```php
 <?php
@@ -136,4 +136,5 @@ define('DB_NAME', 'mutillidae');  # 資料庫名稱
 ?>
 ```
 ### 3. 開啟網頁測試
+- 連結：[http://192.168.10.66/mutillidae](http://192.168.10.66/mutillidae)
 ![mutillidae](images/mutillidae.PNG)
