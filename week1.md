@@ -263,3 +263,7 @@ $ npm install
 ```Bash
 $ npm start
 ```
+### 5. 開啟網站
+- 網站連結：http://192.168.10.66:4000
+- 預設帳號：admin 密碼：Admin_123
+![NodeGoat](images/NodeGoat.PNG)
