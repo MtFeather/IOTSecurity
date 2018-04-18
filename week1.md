@@ -126,7 +126,7 @@ $ cd /var/www/html/mutillidae/
 ```Bash
 $ vim includes/database-config.php
 ```
-```vim
+```php
 <?php
 define('DB_HOST', '127.0.0.1');
 define('DB_USERNAME', 'root');  # 資料庫使用者
