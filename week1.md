@@ -106,3 +106,31 @@ $ sudo service apache2 restart
 ### 5. 檢查網頁設定完成並啟動DVWA
 看到所有設定成功，就可以點「Create / Reset Database」開始使用DVWA了
 ![dvwa_setup](images/dvwa_setup.PNG)
+***
+## 建置Mutillidae測試平台在Raspberry PI 3 websecurity@IOT devices
+### 1. 下載網頁
+- 下載網址：[https://sourceforge.net/projects/mutillidae/](https://sourceforge.net/projects/mutillidae/)
+```Bash
+$ sudo wget https://jaist.dl.sourceforge.net/project/mutillidae/mutillidae-project/LATEST-mutillidae-2.6.60.zip --no-check-certificate
+```
+- 解壓縮檔案
+```Bash
+$ unzip LATEST-mutillidae-2.6.60.zip
+```
+### 修改設定檔
+- 移動到mutillidae目錄
+```Bash
+$ cd /var/www/html/mutillidae/
+```
+- 修改資料庫使用者/密碼
+```Bash
+$ vim includes/database-config.php
+```
+```vim
+<?php
+define('DB_HOST', '127.0.0.1');
+define('DB_USERNAME', 'root');  # 資料庫使用者
+define('DB_PASSWORD', '2727175');  # 資料庫使用者密碼
+define('DB_NAME', 'mutillidae');  # 資料庫名稱
+?>
+```
