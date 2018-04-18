@@ -310,6 +310,10 @@ sqlmap是一款開源滲透測試工具，可以自動檢測和利用SQL注入�
 ```Bash
 $ sudo apt-get install sqlmap
 ```
+或是到官網下載使用：[http://sqlmap.org/](http://sqlmap.org/)
+```github
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+```
 #### `-u`是要檢測的網址，`--identify-waf`是對WAF / IPS / IDS保護進行全面測試
 ```Bash
 $ sqlmap -u "http://192.168.10.66/DVWA/vulnerabilities/brute/?username=admin&password=password&Login=Login#" --identify-waf
@@ -408,5 +412,10 @@ sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you w
 [09:57:28] [CRITICAL] all tested parameters appear to be not injectable. Try to increase '--level'/'--risk' values to perform more tests. Also, you can try to rerun by providing either a valid value for option '--string' (or '--regexp') If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could retry with an option '--tamper' (e.g. '--tamper=space2comment')
 [09:57:28] [WARNING] HTTP error codes detected during run:
 400 (Bad Request) - 1 times, 403 (Forbidden) - 664 times, 404 (Not Found) - 1 times
+```
+
+### 使用SQLmap繞過WAF
+```Bash
+
 ```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
