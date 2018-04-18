@@ -36,9 +36,9 @@ $ git clone https://github.com/ethicalhack3r/DVWA.git
 ```
 - 修改設定檔
   - 複製設定檔
-  ```Bash
-  $ cp DVWA/config/config.inc.php.dist DVWA/config/config.inc.php
-  ```
+```Bash
+$ cp DVWA/config/config.inc.php.dist DVWA/config/config.inc.php
+```
   - 編輯設定檔  
 ```Bash
 $ vim DVWA/config/config.inc.php
@@ -100,4 +100,9 @@ $ sudo chmod +777  /var/www/html/DVWA/hackable/uploads/
 $ sudo chmod  +777 /var/www/html/DVWA/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt
 $ sed -i s/allow_url_fopen = Off/allow_url_fopen = On/g /etc/php/7.0/apache2/php.ini
 $ sed -i s/allow_url_include = Off/allow_url_include = On/g /etc/php/7.0/apache2/php.ini
+$ sudo service apache2 restart
 ```
+***
+### 5. 檢查網頁設定完成並啟動DVWA
+看到所有設定成功，就可以點「Create / Reset Database」開始使用DVWA了
+![dvwa_setup](images/dvwa_setup.PNG)
