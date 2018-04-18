@@ -39,7 +39,7 @@ $ git clone https://github.com/ethicalhack3r/DVWA.git
   ```Bash
   $ cp DVWA/config/config.inc.php.dist DVWA/config/config.inc.php
   ```
-  - 編輯設定檔
+  - 編輯設定檔  
   ```Bash
   $ vim DVWA/config/config.inc.php
   ```
