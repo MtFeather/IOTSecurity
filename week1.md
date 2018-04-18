@@ -43,6 +43,7 @@ $ git clone https://github.com/ethicalhack3r/DVWA.git
   ```Bash
   $ vim DVWA/config/config.inc.php
   ```
+  
   ```php
   <?php
 
