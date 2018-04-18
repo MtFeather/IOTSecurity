@@ -117,7 +117,8 @@ $ sudo wget https://jaist.dl.sourceforge.net/project/mutillidae/mutillidae-proje
 ```Bash
 $ unzip LATEST-mutillidae-2.6.60.zip
 ```
-### 修改設定檔
+***
+### 2. 修改設定檔
 - 移動到mutillidae目錄
 ```Bash
 $ cd /var/www/html/mutillidae/
@@ -134,3 +135,5 @@ define('DB_PASSWORD', '2727175');  # 資料庫使用者密碼
 define('DB_NAME', 'mutillidae');  # 資料庫名稱
 ?>
 ```
+### 3. 開啟網頁測試
+![mutillidae](images/mutillidae.PNG)
