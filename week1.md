@@ -10,3 +10,88 @@
 - 將下載的Ubuntu MATE壓縮檔解壓縮
 - 開啟Win32DiskImager，選擇目標裝置 > 選擇映像檔 > 按下"寫入資料到「裝置」中"開始燒錄
 ![Win32DiskImager](images/Win32DiskImager.jpg)
+***
+### 3. 安裝/啟動服務
+- 安裝WEB服務
+```Bash
+$ sudo apt-get install apache2 php libapache2-mod-php php-curl php-mcrypt php-mbstring phpunit php-gd -y
+```
+- 安裝資料庫
+```Bash
+$ sudo apt-get install mysql-server php-mysqli -y
+```
+- 啟動Apache
+```Bash
+$ sudo service apache2 restart
+```
+***
+### 4. 安裝DVWA
+- 移動到/var/www/html目錄
+```Bash
+$ cd /var/www/html/
+```
+- 下載DVWA網頁
+```Bash
+$ git clone https://github.com/ethicalhack3r/DVWA.git
+```
+- 修改設定檔
+  - 複製設定檔
+  ```Bash
+  $ cp DVWA/config/config.inc.php.dist DVWA/config/config.inc.php
+  ```
+  - 編輯設定檔
+  ```Bash
+  $ vim DVWA/config/config.inc.php
+  ```
+  ```php
+  <?php
+
+  # If you are having problems connecting to the MySQL database and all of the variables below are correct
+  # try changing the 'db_server' variable from localhost to 127.0.0.1. Fixes a problem due to sockets.
+  #   Thanks to @digininja for the fix.
+
+  # Database management system to use
+  $DBMS = 'MySQL';  # 使用的資料庫服務
+  #$DBMS = 'PGSQL'; // Currently disabled
+
+  # Database variables
+  #   WARNING: The database specified under db_database WILL BE ENTIRELY DELETED during setup.
+  #   Please use a database dedicated to DVWA.
+  #
+  # If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.
+  #   See README.md for more information on this.
+  $_DVWA = array();
+  $_DVWA[ 'db_server' ]   = '127.0.0.1';
+  $_DVWA[ 'db_database' ] = 'dvwa';  # 資料表
+  $_DVWA[ 'db_user' ] = 'root';  # 使用者
+  $_DVWA[ 'db_password' ] = '2727175';  # 使用者密碼
+
+  # Only used with PostgreSQL/PGSQL database selection.
+  $_DVWA[ 'db_port '] = '5432';  # 資料庫port號
+
+  # ReCAPTCHA settings
+  #   Used for the 'Insecure CAPTCHA' module
+  #   You'll need to generate your own keys at: https://www.google.com/recaptcha/admin/create
+  #$_DVWA[ 'recaptcha_public_key' ]  = '';
+  #$_DVWA[ 'recaptcha_private_key' ]  = '';
+  $_DVWA[ 'recaptcha_public_key' ] = '6LfQNCYTAAAAALx0oAwtLHJlzNHXTKLl2UZjQjw-';  # google recaptcha 公鑰
+  $_DVWA[ 'recaptcha_private_key' ] = '6LfQNCYTAAAAAHnvqCzw2lG95FD-RfomKHWf7Zob';  # google recaptcha 私鑰
+
+  # Default security level
+  #   Default value for the secuirty level with each session.
+  #   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.
+  #$_DVWA[ 'default_security_level' ] = 'impossible';
+  $_DVWA[ 'default_security_level' ] = 'low';  # DVWA防護階級
+   
+  # Default PHPIDS status
+  #   PHPIDS status with each session.
+  #   The default is 'disabled'. You can set this to be either 'enabled' or 'disabled'.
+  $_DVWA[ 'default_phpids_level' ] = 'disabled';
+
+  # Verbose PHPIDS messages
+  #   Enabling this will show why the WAF blocked the request on the blocked request.
+  #   The default is 'disabled'. You can set this to be either 'true' or 'false'.
+  $_DVWA[ 'default_phpids_verbose' ] = 'false';
+
+  ?>
+  ```
