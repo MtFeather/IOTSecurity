@@ -9,3 +9,4 @@
 - 下載Win32DiskImager燒錄軟體：[https://sourceforge.net/projects/win32diskimager/](https://sourceforge.net/projects/win32diskimager/)
 - 將下載的Ubuntu MATE壓縮檔解壓縮
 - 開啟Win32DiskImager，選擇目標裝置 > 選擇映像檔 > 按下"寫入資料到「裝置」中"開始燒錄
+![Win32DiskImager](images/Win32DiskImager.jpg)
