@@ -269,4 +269,6 @@ cd 'C:\Program Files\Elastic\winlogbeat'
 Start-Service winlogbeat
 ```
 ![winlogbeat_7](images/winlogbeat_7.PNG)
+- 在kibana看到的結果
+![winlogbeat_8](images/winlogbeat_8.PNG)
 
