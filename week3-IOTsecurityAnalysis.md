@@ -13,7 +13,7 @@
   ![JAVA](images/java.PNG)
 ### 2. 設定Java開發環境
 Step1. 按下鍵盤『windows鍵+R』，開啟『執行』對話框，輸入『sysdm.cpl』，按下確定  
-![env_1](images/env_1.PNG)
+![env_1](images/env_1.PNG)  
 Step2. 在系統內容視窗中，點選如下圖所示的『進階』頁籤，及點擊『環境變數』  
-![env_2](images/env_2.PNG)
+![env_2](images/env_2.PNG)  
 # 安裝伺服器系統
