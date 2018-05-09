@@ -260,3 +260,13 @@ cd 'C:\Program Files\Elastic\winlogbeat'
 - 查看URL:[http://localhost:9200/winlogbeat-\*](http://localhost:9200/winlogbeat-*)
 ![winlogbeat_5](images/winlogbeat_5.PNG)
 
+```powershell
+.\winlogbeat setup --dashboards
+```
+![winlogbeat_6](images/winlogbeat_6.PNG)
+- 啟動winlogbeat服務
+```powershell
+Start-Service winlogbeat
+```
+![winlogbeat_7](images/winlogbeat_7.PNG)
+
