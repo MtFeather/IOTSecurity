@@ -9,7 +9,7 @@
 # 環境需求
 ## JAVA 8
 ### 1. 下載與安裝
-  下載網址: [http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- 下載網址: [http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
   ![JAVA](images/java.PNG)
 ### 2. 設定Java開發環境
 Step1. 按下鍵盤『windows鍵+R』，開啟『執行』對話框，輸入『sysdm.cpl』，按下『確定』
@@ -47,8 +47,11 @@ cd 'C:\Program Files\Elastic\Elasticsearch\6.2.4\bin'
 ./elasticsearch.exe
 ```
 ### 檢查測試
-在網站URL: [http://localhost:9200/](http://localhost:9200/)  
+- 在網站URL: [http://localhost:9200/](http://localhost:9200/)  
 ![elastic_test](images/elastic_test.PNG)
 
-
+## 安裝 Kibana
+- 下載網址: https://artifacts.elastic.co/downloads/kibana/kibana-6.2.4-windows-x86_64.zip
+- 解壓縮後，我是將目錄與Elasticsearch放在同一層的目錄(C:\Program Files\Elastic)，並且將目錄去除後面的版本名稱
+![kibana_1](images/kibana_1.PNG)
 
