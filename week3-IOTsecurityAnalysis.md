@@ -20,5 +20,9 @@ Step3. 在底下的系統變數中選擇Path，按下底下的『編輯』
 ![env_3](images/env_3.PNG)  
 Step4. 點擊右邊的『新增』，輸入安裝的路徑，預設應該是"C:\Program Files\Java\jdk1.8.0_171\bin"，之後按下『確定』 
 ![env_4](images/env_4.PNG)   
-
+### 3. 檢查設定成功
+```cmd
+javac -version
+```
+![javac_version](images/javac_version.PNG)
 # 安裝伺服器系統
