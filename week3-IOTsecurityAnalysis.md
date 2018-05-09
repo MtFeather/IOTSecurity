@@ -37,6 +37,15 @@ Step2.
 ![elastic_2](images/elastic_2.PNG)
 Step3.  
 ![elastic_3](images/elastic_3.PNG)
+### 啟動服務
+- 使用cmd移動到"C:\Program Files\Elastic\Elasticsearch\6.2.4\bin"
+```cmd
+cd 'C:\Program Files\Elastic\Elasticsearch\6.2.4\bin'
+```
+- 執行啟動
+```cmd
+./elasticsearch.exe
+```
 ### 檢查測試
 在網站URL: [http://localhost:9200/](http://localhost:9200/)  
 ![elastic_test](images/elastic_test.PNG)
