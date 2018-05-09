@@ -8,6 +8,6 @@
 # 環境需求
 ## JAVA 8
 1. 下載與安裝  
-  下載網址: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+   下載網址: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 # 安裝伺服器系統
