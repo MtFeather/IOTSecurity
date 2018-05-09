@@ -24,5 +24,5 @@ Step4. 點擊右邊的『新增』，輸入安裝的路徑，預設應該是"C:\
 ```cmd
 javac -version
 ```
-![javac_version](images/javac_version.PNG)
+![java_version](images/java_version.PNG)
 # 安裝伺服器系統
