@@ -39,7 +39,7 @@ Step3.
 ![elastic_3](images/elastic_3.PNG)
 ### 檢查測試
 在網站URL: [http://localhost:9200/](http://localhost:9200/)
-![elatic_test](images/elatic_test.PNG)
+![elastic_test](images/elastic_test.PNG)
 
 
 
