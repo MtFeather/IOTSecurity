@@ -17,7 +17,7 @@ Step1. 按下鍵盤『windows鍵+R』，開啟『執行』對話框，輸入『s
 Step2. 在系統內容視窗中，點選如下圖所示的『進階』頁籤，及點擊『環境變數』  
 ![env_2](images/env_2.PNG)  
 Step3. 在底下的系統變數中選擇Path，按下底下的『編輯』
-![env_3](images/env_3.PNG)
+![env_3](images/env_3.PNG)  
 Step4. 點擊右邊的『新增』，輸入安裝的路徑，預設應該是"C:\Program Files\Java\jdk1.8.0_171\bin"，之後按下『確定』 
 ![env_4](images/env_4.PNG)   
 
