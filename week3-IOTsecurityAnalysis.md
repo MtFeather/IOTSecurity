@@ -7,7 +7,7 @@
 > - winlogbeat(windows)、logstash(linux): 幫助收集各地的log或是資訊，並且根據你的格式，轉換成各種資料欄位。
 # 環境需求
 ## JAVA 8
-1. 下載與安裝  
+1. 下載與安裝   
   下載網址: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 2. 設定Java開發環境
 # 安裝伺服器系統
