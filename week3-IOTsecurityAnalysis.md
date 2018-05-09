@@ -286,3 +286,48 @@ sudo mv logstash-5.2.0/ /opt
 cd /opt 
 sudo mv logstash-5.2.0/ logstash
 ```
+```bash
+sudo apt-get install ant texinfo openjdk-8-jdk build-essential
+git clone https://github.com/jnr/jffi.git
+cd jffi
+ant jar
+sudo cp build/jni/libjffi-1.2.so /opt/logstash/vendor/jruby/lib/jni/arm-Linux
+```
+- 修改設定檔
+```bash
+cd /opt/logstash
+sudo vim config/jvm.options
+-----------------------------
+-Xms256m
+-Xmx512m
+-----------------------------
+
+sudo vim apache-filter.conf 
+-----------------------------
+input {
+  file {
+    path => "/var/log/apache2/access.log"
+    start_position => "beginning"
+  }
+}
+
+filter {
+  if [path] =~ "access" {
+    mutate { replace => { "type" => "apache_access" } }
+    grok {
+      match => { "message" => "%{COMBINEDAPACHELOG}" }
+    }
+  }
+  date {
+    match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["192.168.1.56:9200"]
+  }
+  stdout { codec => rubydebug }
+}
+-----------------------------
+```
