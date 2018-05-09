@@ -91,6 +91,11 @@ Windows因為安全性的考量，在沒有更改過設定之前，是不允許�
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
+- 安裝
+```powershell
+cd 'C:\Program Files\Elastic\winlogbeat'
+.\install-service-winlogbeat.ps1
+```
 
 
 
