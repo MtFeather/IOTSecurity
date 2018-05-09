@@ -81,13 +81,16 @@ Windows是winlogbeat，Linux是logstash
 - 下載網址: [https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-6.2.4-windows-x86_64.zip](https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-6.2.4-windows-x86_64.zip)
 - 解壓縮後，我是將目錄與Elasticsearch放在同一層的目錄(C:\Program Files\Elastic)，並且將目錄去除後面的版本名稱
 ![kibana_1](images/kibana_1.PNG)
-- 執行原則  
+- 修改執行原則  
 Windows因為安全性的考量，在沒有更改過設定之前，是不允許執行 Windows PowerShell 的腳本檔。這就是所謂的「執行原則」。在預設狀態下，執行原則的設定值是 Restricted，也就是說你根本不能執行任何的 Windows PowerShell 腳本檔。  
 「執行原則」有下列 4 種：  
   * Restricted ：關閉腳本檔的執行功能，這是預設的設定值。
   * AllSigned ：只允許執行受信任發行者簽署過的腳本檔。
   * RemoteSigned ：在本機電腦所撰寫的腳本檔，不需要簽署就可執行；但是從網際網路（例如：email、MSN Messenger）下載的腳本檔就必須經過受信任發行者的簽署才能執行。
   * Unrestricted ：任何腳本檔皆可被執行，但是於執行網際網路下載的腳本檔時，會先出現警告的提示視窗。
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
 
 
 
