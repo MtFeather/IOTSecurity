@@ -57,9 +57,9 @@ cd 'C:\Program Files\Elastic\Elasticsearch\6.2.4\bin'
 ![kibana_1](images/kibana_1.PNG)
 ### 修改設定值
 - 修改kibana目錄的config/kibana.yml
-將`server.host`的註解拿掉，並把裡面的"localhost"換成"0.0.0.0"，0.0.0.0 表示綁定所有 IP
+將`server.host`的註解拿掉，並把裡面的"localhost"換成"0.0.0.0"。
 ```yml
-server.host: "0.0.0.0"
+server.host: "0.0.0.0"  # 0.0.0.0 表示綁定所有 IP
 ```
 ![kibana_2](images/kibana_2.PNG)
 
