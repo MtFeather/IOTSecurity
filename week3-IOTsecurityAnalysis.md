@@ -56,7 +56,7 @@ cd 'C:\Program Files\Elastic\Elasticsearch\6.2.4\bin'
 - 解壓縮後，我是將目錄與Elasticsearch放在同一層的目錄(C:\Program Files\Elastic)，並且將目錄去除後面的版本名稱
 ![kibana_1](images/kibana_1.PNG)
 ### 修改設定值
-- 修改kibana目錄的config/kibana.yml
+- 修改kibana目錄的config/kibana.yml  
 將`server.host`的註解拿掉，並把裡面的"localhost"換成"0.0.0.0"。
 ```yml
 server.host: "0.0.0.0"  # 0.0.0.0 表示綁定所有 IP
