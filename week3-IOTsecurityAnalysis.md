@@ -71,7 +71,7 @@ cd C:\Program Files\Elastic\kibana\bin
 ./kibana.bat
 ```
 ### 檢查測試
-- 在網站URL: [http://localhost:5601/](http://localhost:5601/)   
+- 在網站URL: [http://localhost:5601/](http://localhost:5601/)
 ![kibana_3](images/kibana_3.PNG)
 
 
