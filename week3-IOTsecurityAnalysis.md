@@ -25,4 +25,16 @@ Step4. 點擊右邊的『新增』，輸入安裝的路徑，預設應該是"C:\
 javac -version
 ```
 ![java_version](images/java_version.PNG)
+
 # 安裝伺服器系統
+Elasticsearch + Kibana
+## 安裝 Elasticsearch
+下載網址: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.4.msi
+### 開始安裝
+Step1.  
+![elastic_1](images/elastic_1.PNG)
+Step2.  
+![elastic_2](images/elastic_2.PNG)
+Step3.  
+![elastic_3](images/elastic_3.PNG)
+
