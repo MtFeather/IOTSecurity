@@ -272,3 +272,17 @@ Start-Service winlogbeat
 - 在kibana看到的結果
 ![winlogbeat_8](images/winlogbeat_8.PNG)
 
+## 安裝 logstash@Ubuntu MATE (64-bit)
+- 安裝JAVA 8
+```bash
+sudo apt-get install openjdk-8-jre openjdk-8-jdk
+```
+- 下載安裝logstash
+```bash
+sudo apt-get install grok
+curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.2.0.zip
+unzip logstash-5.2.0.zip
+sudo mv logstash-5.2.0/ /opt
+cd /opt 
+sudo mv logstash-5.2.0/ logstash
+```
