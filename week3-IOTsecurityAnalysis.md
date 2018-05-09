@@ -47,7 +47,7 @@ cd 'C:\Program Files\Elastic\Elasticsearch\6.2.4\bin'
 ./elasticsearch.exe
 ```
 ### 檢查測試
-- 在網站URL: [http://localhost:9200/](http://localhost:9200/)  
+- 在網站URL: [http://localhost:9200/](http://localhost:9200/)   
 ![elastic_test](images/elastic_test.PNG)
 
 ## 安裝 Kibana
