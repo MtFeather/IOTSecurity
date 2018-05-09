@@ -247,7 +247,16 @@ logging.files:
 logging.level: info
 ```
 ### 測試
+```powershell
+cd 'C:\Program Files\Elastic\winlogbeat'
+.\winlogbeat.exe test config -c .\winlogbeat.yml -e
+```
+![winlogbeat_3](images/winlogbeat_3.PNG)
 
-
-
+```powershell
+.\winlogbeat setup --template -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'
+```
+![winlogbeat_4](images/winlogbeat_4.PNG)
+- 查看URL:[http://localhost:9200/winlogbeat-\*](http://localhost:9200/winlogbeat-*)
+![winlogbeat_5](images/winlogbeat_5.PNG)
 
